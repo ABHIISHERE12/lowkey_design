@@ -1,0 +1,179 @@
+.editor-sidebar {
+  width: 260px;
+  background-color: var(--bg-main);
+  border-right: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.sidebar-section {
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.sidebar-title {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.sidebar-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  box-shadow: 2px 2px 0px var(--border-color);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.sidebar-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--border-color);
+  background-color: #f0f0f0;
+}
+
+.sidebar-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--border-color);
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1.5px solid var(--border-color);
+  font-weight: 800;
+  font-size: 0.75rem;
+}
+
+.node-btn:nth-child(1) .btn-icon { background-color: #bfdbfe; }
+.node-btn:nth-child(2) .btn-icon { background-color: #bbf7d0; }
+.node-btn:nth-child(3) .btn-icon { background-color: #fef08a; }
+.node-btn:nth-child(4) .btn-icon { background-color: #fbcfe8; }
+
+.edge-line {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--border-color);
+  position: relative;
+}
+
+.edge-line[data-type="inheritance"]::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  border-left: 6px solid var(--border-color);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.sidebar-btn.edge-btn.active {
+  background-color: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+.sidebar-btn.edge-btn.active .edge-line {
+  background-color: #fff;
+}
+
+.sidebar-btn.edge-btn.active .edge-line[data-type="inheritance"]::after {
+  border-left-color: #fff;
+}
+
+.sidebar-btn.edge-btn.active .edge-line[data-type="implementation"] {
+  border-top-color: #fff;
+  background-color: transparent;
+}
+
+.edge-line[data-type="implementation"]::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  border-left: 6px solid var(--border-color);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+.sidebar-btn.edge-btn.active .edge-line[data-type="implementation"]::after {
+  border-left-color: #fff;
+}
+
+.edge-line[data-type="aggregation"]::after {
+  content: '◇';
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  color: var(--border-color);
+  font-size: 14px;
+}
+.sidebar-btn.edge-btn.active .edge-line[data-type="aggregation"]::after {
+  color: #fff;
+}
+
+.edge-line[data-type="composition"]::after {
+  content: '◆';
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  color: var(--border-color);
+  font-size: 14px;
+}
+.sidebar-btn.edge-btn.active .edge-line[data-type="composition"]::after {
+  color: #fff;
+}
+
+.edge-line[data-type="dependency"] {
+  border-top: 2px dashed var(--border-color);
+  background-color: transparent;
+}
+.edge-line[data-type="dependency"]::after {
+  content: '>';
+  position: absolute;
+  right: -6px;
+  top: -9px;
+  color: var(--border-color);
+  font-size: 14px;
+  font-weight: bold;
+}
+.sidebar-btn.edge-btn.active .edge-line[data-type="dependency"] {
+  border-top-color: #fff;
+}
+.sidebar-btn.edge-btn.active .edge-line[data-type="dependency"]::after {
+  color: #fff;
+}
+
+.sidebar-help {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  font-style: italic;
+}

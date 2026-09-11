@@ -1,0 +1,97 @@
+export const EVALUATION_CRITERIA = [
+  'Requirement Understanding',
+  'Class Responsibilities',
+  'Encapsulation',
+  'Coupling & Cohesion',
+  'Abstraction',
+  'Extensibility',
+  'Design Patterns',
+  'Edge Cases',
+  'Explanation Quality',
+];
+
+export const getMockEvaluation = (problemTitle = 'Parking Lot') => ({
+  overallScore: 8.2,
+  maxScore: 10,
+  problemTitle,
+  criteria: [
+    {
+      name: 'Requirement Understanding',
+      score: 8.5,
+      evidence: 'Core entities such as vehicles, spots, and assignment flow are present.',
+      concern: 'Fee calculation and ticket lifecycle are only partially modeled.',
+      suggestion: 'Add Ticket and FeeStrategy classes to cover entry, exit, and pricing.',
+    },
+    {
+      name: 'Class Responsibilities',
+      score: 8.0,
+      evidence: 'ParkingSpot and Vehicle have clear, focused roles.',
+      concern: 'ParkingLot currently mixes assignment, availability, and payment logic.',
+      suggestion: 'Move assignment and payment into dedicated services or managers.',
+    },
+    {
+      name: 'Encapsulation',
+      score: 8.4,
+      evidence: 'Most attributes are private with accessors on Vehicle and ParkingSpot.',
+      concern: 'A few fields are mutated directly from neighboring classes.',
+      suggestion: 'Expose state changes through methods like assignVehicle() and release().',
+    },
+    {
+      name: 'Coupling & Cohesion',
+      score: 7.8,
+      evidence: 'Inheritance between Vehicle subtypes is clean and cohesive.',
+      concern: 'Concrete vehicle types are referenced directly in spot assignment.',
+      suggestion: 'Depend on Vehicle or a size/type abstraction instead of concrete classes.',
+    },
+    {
+      name: 'Abstraction',
+      score: 8.6,
+      evidence: 'Abstract Vehicle is a strong base for Car, Bike, and future types.',
+      concern: 'Spot selection is still hardcoded rather than strategy-based.',
+      suggestion: 'Introduce a SpotAssignmentStrategy abstraction.',
+    },
+    {
+      name: 'Extensibility',
+      score: 8.1,
+      evidence: 'New vehicle types can be added without rewriting the whole model.',
+      concern: 'Pricing rules would require edits in multiple classes.',
+      suggestion: 'Isolate fee rules so new rates or vehicle types plug in cleanly.',
+    },
+    {
+      name: 'Design Patterns',
+      score: 7.6,
+      evidence: 'Inheritance is used appropriately for vehicle specialization.',
+      concern: 'Factory or Strategy patterns are missing where they would help.',
+      suggestion: 'Use a simple factory for vehicles and a strategy for assignment/fees.',
+    },
+    {
+      name: 'Edge Cases',
+      score: 7.9,
+      evidence: 'Occupied spots and basic vehicle assignment are considered.',
+      concern: 'Full lot, invalid vehicle type, and concurrent entry/exit are not modeled.',
+      suggestion: 'Add explicit handling for full lots, failed assignment, and release on exit.',
+    },
+    {
+      name: 'Explanation Quality',
+      score: 8.9,
+      evidence: 'Class names and relationships communicate intent clearly.',
+      concern: 'Method names could better describe domain actions.',
+      suggestion: 'Rename generic methods to domain language such as park() and unpark().',
+    },
+  ],
+  strengths: [
+    'Vehicle hierarchy is clear and easy to extend with new types.',
+    'ParkingSpot encapsulates occupancy better than a single mixed model.',
+    'Class names map well to the parking-lot domain.',
+  ],
+  areasToImprove: [
+    'Assignment, availability, and pricing still sit too close together.',
+    'Edge cases like a full lot or failed assignment are under-specified.',
+    'Concrete types leak into assignment instead of abstractions.',
+  ],
+  suggestions: [
+    'Extract Ticket and FeeStrategy so billing is independent of parking spots.',
+    'Introduce SpotAssignmentStrategy for compact, large, and handicapped spots.',
+    'Model full-lot and invalid-vehicle outcomes as explicit flows, not silent failures.',
+  ],
+});

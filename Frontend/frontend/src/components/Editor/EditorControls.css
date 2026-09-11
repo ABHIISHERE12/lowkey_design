@@ -1,0 +1,47 @@
+.editor-controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--white);
+  border: 2px solid var(--border-color);
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0px var(--border-color);
+  pointer-events: all;
+}
+
+.control-btn {
+  padding: 0.4rem 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-main);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  transition: all 0.1s;
+}
+
+.control-btn:hover {
+  background-color: #f0f0f0;
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0px var(--border-color);
+}
+
+.control-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 0px var(--border-color);
+}
+
+.clear-btn {
+  background-color: #fca5a5;
+}
+
+.clear-btn:hover {
+  background-color: #f87171;
+}
+
+.control-divider {
+  height: 2px;
+  background-color: #e5e5e5;
+  margin: 0.25rem 0;
+}

@@ -1,0 +1,111 @@
+.editor-right-panel {
+  width: 360px;
+  background-color: var(--bg-main);
+  border-left: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.panel-section {
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.panel-title {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.problem-card-mini {
+  background-color: var(--white);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.problem-header-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.problem-icon-mini {
+  font-size: 1.25rem;
+}
+
+.problem-title-mini {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.problem-desc-mini {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.problem-requirements h5 {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.problem-requirements ul {
+  padding-left: 1.2rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  list-style-type: disc;
+}
+
+.summary-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--white);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.stat-item:hover {
+  background-color: #f9f9f9;
+}
+
+.stat-value {
+  background-color: #f0f0f0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  font-size: 0.8rem;
+}
+
+.total-relationships {
+  border-top: 2px dashed var(--border-color);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-radius: 0;
+}

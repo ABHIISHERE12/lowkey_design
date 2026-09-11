@@ -1,0 +1,109 @@
+.problem-card {
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 4px 4px 0px var(--border-color);
+  background-color: var(--white);
+  cursor: pointer;
+  height: 100%;
+}
+
+.problem-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--border-color);
+}
+
+.problem-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--border-color);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.card-icon {
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  background-color: var(--white);
+  box-shadow: 2px 2px 0px var(--border-color);
+}
+
+.difficulty-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--border-color);
+  text-transform: uppercase;
+}
+
+.difficulty-badge.easy { background-color: #bbf7d0; }
+.difficulty-badge.medium { background-color: #fef08a; }
+.difficulty-badge.hard { background-color: #fca5a5; }
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px dashed rgba(0,0,0,0.1);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.practice-btn {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 2px 2px 0px var(--border-color);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.problem-card:hover .practice-btn {
+  background-color: #1a1a1a;
+  color: #fff;
+  box-shadow: 2px 2px 0px #1a1a1a;
+}
